@@ -1,0 +1,10 @@
+#include <iostream>
+int main ()
+{
+int gallons = 15;
+int miles = 375;
+int MpG = miles / gallons;
+
+//output the miles per gallon
+cout<< "your car has: \n" << MpG << " Miles per Gallon.";
+}
