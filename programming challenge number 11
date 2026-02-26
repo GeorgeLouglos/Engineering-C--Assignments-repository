@@ -1,0 +1,13 @@
+#include <iostream>
+int main()
+{
+  //setting the variables
+  int gallons = 20;
+  int MpG1 = 23.5;
+  int MpG2 = 28.9
+  int TownMiles = MpG1 * gallons
+  int HighwayMiles = MpG2 *gallons
+
+  //output the miles per gallon
+  cout<< "your car can travel: \n" << TownMiles << " Miles in Town \n";
+  cout<< "as well as " << HighwayMiles << " Miles on the Highways";
