@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  cout<< "this program will help you calculate your total car expenses \n\n";
+  //the variables used in the program
+  float tireCost = 0;
+  float insurance = 0;
+  float gasMoney = 0;
+  float oil = 0;
+  float maintenanceCost = 0;
+
+  // the variable for the total cost
+  float total = 0;
+
+  //enter the cost of each variable
+  cout<< "enter your monthly spending for tires \n";
+  cin<< tireCost;
+  cout<< "enter your monthly spending for insurance \n";
+  cin<< insurance;
+  cout<< "enter your monthly spending for gas \n";
+  cin<< gasMoney;
+  cout<< "enter your monthly spending for oil \n";
+  cin<< oil;
+  cout<< "enter your monthly spending for maintenance \n";
+  cin<< maintenanceCost;
+
+  // gives the output for the total cost
+  cout<< "Your total monthly spending on your vehcile is \n";
+  total = tireCost + insruance + oil + gasMoney + maintenanceCost;
+  cout<< total
+}
