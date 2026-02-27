@@ -1,0 +1,47 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int main()
+
+
+{
+
+//opening message
+cout<< "you have 10 guesses to correctly guess a number from 0-100\n";
+
+// get a different number each time
+		srand (time(0));
+
+		//generate number and set variables
+		int randomNumb = rand() % 101;
+			       
+	//introduce variables
+	    int i = 0;
+	    int guess = 0;
+	    
+	    
+	    
+	    //open the loop that stops after either 10 guesses or a correct guess
+		do {
+			cout << " What is your best guess? \n";
+			cin>> guess;
+			i++;
+		
+			//higher or lower 
+			if(guess<randomNumb) {
+	        cout<< "Your guess was below the random number generated.\n";
+			} else {
+			    cout<< "your guess was above the random number generated. \n";
+			}
+			
+		}
+		while(i <= 10 && guess!=randomNumb);
+		
+		if(guess = randomNumb){
+		    cout<< "Congrats you got it right!!";
+		}
+		if(i == 11){
+		    cout<< "Nice try, the answer was: " << randomNumb;
+		   	}
+		
+}
