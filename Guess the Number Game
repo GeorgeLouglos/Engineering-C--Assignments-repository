@@ -30,7 +30,7 @@ cout<< "you have 10 guesses to correctly guess a number from 0-100\n";
 			//higher or lower 
 			if(guess<randomNumb) {
 	        cout<< "Your guess was below the random number generated.\n";
-			} else {
+			} else if(guess>randomNumb{
 			    cout<< "your guess was above the random number generated. \n";
 			}
 			
