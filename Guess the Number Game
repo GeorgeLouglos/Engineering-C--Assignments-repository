@@ -1,47 +1,61 @@
 #include <iostream>
 #include <cstdlib>
+#include <string>
 using namespace std;
-int main()
 
+int main()
 
 {
 
 //opening message
-cout<< "you have 10 guesses to correctly guess a number from 0-100\n";
+	cout<< "you have 10 guesses to correctly guess a number from 0-100.\nYou can enter mutliple guesses at once by using an '+' or '-' between guesses,\nthis will use multiple guesses and make the game possibly harder. \n\n" ;
 
 // get a different number each time
-		srand (time(0));
+	srand (time(0));
 
-		//generate number and set variables
-		int randomNumb = rand() % 101;
-			       
+	//generate number and set variables
+	int randomNumb = rand() % 101;
+
 	//introduce variables
-	    int i = 0;
-	    int guess = 0;
-	    
-	    
-	    
-	    //open the loop that stops after either 10 guesses or a correct guess
-		do {
-			cout << " What is your best guess? \n";
-			cin>> guess;
-			i++;
-		
-			//higher or lower 
-			if(guess<randomNumb) {
-	        cout<< "Your guess was below the random number generated.\n";
-			} else if(guess>randomNumb{
-			    cout<< "your guess was above the random number generated. \n";
-			}
-			
+	int i = 0;
+	int guess = 1001;
+
+
+
+	//open the loop that stops after either 10 guesses or a correct guess
+	do {
+		cout << " Enter your best guess \n";
+		cin>> guess;
+		i++;
+
+		//stops letters and numbers out of range
+		if (cin.fail()) {
+			cin.clear();
+			cin.ignore( 10000, '\n');
+			cout<< "you know what you lost a guess, just enter a number next time dawg </3 \n";
+			continue;
 		}
-		while(i <= 10 && guess!=randomNumb);
-		
-		if(guess = randomNumb){
-		    cout<< "Congrats you got it right!!";
+
+
+
+		//higher or lower
+		if(guess<randomNumb) {
+			cout<< "Your guess was below the random number generated.\n";
+		} else if(guess>randomNumb) {
+			cout<< "your guess was above the random number generated. \n";
 		}
-		if(i == 11){
-		    cout<< "Nice try, the answer was: " << randomNumb;
-		   	}
-		
+
+//ending conditions
+	if(guess == randomNumb && i != 11) {
+		cout<< "Congrats you got it right!!";
+	}
+	else if(i > 10) {
+		cout<< "Nice try, the answer was: " << randomNumb;
+    return 0;
+	}
+
+	}
+	while(i <= 10 && guess!=randomNumb);
+
+
 }
