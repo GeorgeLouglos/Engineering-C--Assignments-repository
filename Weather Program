@@ -24,12 +24,12 @@ int main() {
     
             cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
     cout<< "    | This program helps to find the Cloud Base and wind chill based on three factors:|\n";
-    cout<< "    | Tempurature in fahrenheight,wind speed in MPH, and dew point.                   |\n";
+    cout<< "    | Tempurature in fahrenheit,wind speed in MPH, and dew point.                   |\n";
     cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
             
    
     cout<< "                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-    cout<< "                    | Please enter your Tempurature in fahrenheight.|\n";
+    cout<< "                    | Please enter your Tempurature in fahrenheit.|\n";
     cout<< "                    | ";
     cin>> tempF; 
     cout<< "                    | Now, please enter your Wind speed in MPH      |\n";
