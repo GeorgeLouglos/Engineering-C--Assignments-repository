@@ -3,7 +3,7 @@
 using namespace std;
 
 //make the varibales
-void take_input (double& TempF, double& WindMPH, double& dewPoint);
+void func_layout (double& TempF, double& WindMPH, double& dewPoint, double& CloudBase, double& WindChill);
     
 //make a function for wind chill
 void func_WindChill (double& TempF, double& WindMPH, double& WindChill, double& error);
@@ -21,15 +21,25 @@ int main() {
     double dewPoint = 0;
     double CloudBase = 0;
     double WindChill = 0;
+
+    //define my functions
+    func_layout (tempF, WindMPH, dewPoint, CloudBase, WindChill);
+
+    func_CloudBase (tempF, WindMPH, dewPoint, CloudBase);
     
-            cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+    func_WindChill (tempF, WindMPH, dewPoint, WindChill);
+    }
+
+    void func_layout (double& tempF, double& WindMPH, double& dewPoint, double& CloudBase, double& WindChill){
+            
+    cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
     cout<< "    | This program helps to find the Cloud Base and wind chill based on three factors:|\n";
-    cout<< "    | Tempurature in fahrenheit,wind speed in MPH, and dew point.                   |\n";
+    cout<< "    | Tempurature in fahrenheht,wind speed in MPH, and dew point.                   |\n";
     cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
             
    
     cout<< "                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-    cout<< "                    | Please enter your Tempurature in fahrenheit.|\n";
+    cout<< "                    | Please enter your Tempurature in fahrenheit.  |\n";
     cout<< "                    | ";
     cin>> tempF; 
     cout<< "                    | Now, please enter your Wind speed in MPH      |\n";
@@ -40,13 +50,9 @@ int main() {
     cin>> dewPoint;
     cout<< "                    | Calculating now...                            |\n";
     cout<< "                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n ";
-    
 
-    func_CloudBase(tempF, WindMPH, dewPoint, CloudBase);
+    }
     
-    func_WindChill (tempF, WindMPH, dewPoint, WindChill);
-}
-
     void func_CloudBase(double& tempF, double& WindMPH, double& dewPoint, double& CloudBase) {
     
     //calculate the cloud base in feet
