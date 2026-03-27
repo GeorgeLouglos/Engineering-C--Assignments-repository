@@ -1,0 +1,224 @@
+#include <iostream>
+using namespace std;
+
+//creating variables
+void func_input (int& father, int& mother);
+
+//making functions
+void func_father (int& father);
+void func_mother (int& mother);
+void func_table (int& father, int& mother);
+
+void showOutput (int& father, int& mother);
+
+int main()
+{
+    char answer;
+    int father, mother, table;
+    //start the program
+    cout<< "This program will help you to determine if your child will be normal vision or colorblind.";
+    
+    do {
+    func_father (father);
+    func_mother (mother);
+    func_table (father, mother);
+    cout<< "Do you want to restart? y/n\n";
+    cin>> answer;
+    } while (answer == 'y');
+}   
+
+void func_father (int& father) {
+    //asks for the input of the father
+    cout<<"\n\nPlease enter if the father is normal vision or colorblind \n1 for colorblind, 2 for normal vision\n";
+    cin>> father;
+}    
+  
+void func_mother (int& mother){  
+    cout<< "\nNow enter if the mother is normal vision or colorblind \n1 for colorblind, 2 for silent carrier, 3 for normal vision.\n";
+    cin>> mother;
+}
+
+void func_table (int& father, int& mother){
+    //give the table to the user
+    if(father == 1 && mother == 1){
+        cout<< "           Xc                Y\n";
+        cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "  Xc|     XcXc      |       XcY     |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "  Xc|     XcXc      |       XcY     |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        
+        //give the percent
+        cout<< "         Girl       |      Boy      \n";
+        cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        cout<< "    Colorblind: 100 |Colorblind: 100 \n";
+        cout<< "    carrier: 0      |Normal: 0\n";
+        cout<< "    Normal: 0       |\n";
+    
+    }
+    
+    if(father == 1 && mother == 2){
+        cout<< "           Xc                Y\n";
+        cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "   X|     XXc       |        XY     |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "  Xc|     XcXc      |       XcY     |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        
+        //give the percent
+        cout<< "         Girl       |      Boy      \n";
+        cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        cout<< "    Colorblind: 50  |Colorblind: 50 \n";
+        cout<< "    carrier: 50     |Normal: 50\n";
+        cout<< "    Normal: 0       |\n";
+    
+    }
+    if(father == 1 && mother == 3){
+        cout<< "           Xc                Y\n";
+        cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "   X|      XXc      |       XY      |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "   X|      XXc      |       XY      |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        
+        //give the percent
+        cout<< "         Girl       |      Boy      \n";
+        cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        cout<< "    Colorblind: 0 |Colorblind: 0 \n";
+        cout<< "    carrier: 100      |Normal: 100\n";
+        cout<< "    Normal: 0       |\n";
+
+    }
+    if(father == 2 && mother == 1){
+        cout<< "            X                Y\n";
+        cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "  Xc|      XXc      |       XcY     |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "  Xc|      XXc      |       XcY     |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        
+        //give the percent
+        cout<< "         Girl       |      Boy      \n";
+        cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        cout<< "    Colorblind: 0 |Colorblind: 100 \n";
+        cout<< "    carrier: 100      |Normal: 0\n";
+        cout<< "    Normal: 0       |\n";
+    
+    }
+    if(father == 2 && mother == 2){
+        cout<< "            X                Y\n";
+        cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "   X|      XX       |        XY     |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "  Xc|      XXc      |       XcY     |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        
+        //give the percent
+        cout<< "         Girl       |      Boy      \n";
+        cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        cout<< "    Colorblind: 0   |Colorblind: 50 \n";
+        cout<< "    carrier: 50     |Normal: 50\n";
+        cout<< "    Normal: 50      |\n";
+    
+    }
+    if(father == 2 && mother == 3){
+        cout<< "            X                Y\n";
+        cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "   X|      XX       |       XY      |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "   X|      XX       |       XY      |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    |               |               |\n";
+        cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        
+        //give the percent
+        cout<< "         Girl       |      Boy      \n";
+        cout<< "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        cout<< "    Colorblind: 0   |Colorblind: 0 \n";
+        cout<< "    carrier: 0      |Normal: 100\n";
+        cout<< "    Normal: 100     |\n";
+    }
+    
+}
