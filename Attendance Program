@@ -1,0 +1,68 @@
+// this program will help to keep attendance for the class of 2028 Engineering shop.
+#include <iostream>
+#include <string>
+#include <vector>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+  vector <string> studentNames{"Envy Brown", "Ilyas Devaux", "Damon Diulio", "Hamir.", "Aj Landritsi", "Bode Lentz", "Geroge Louglos", "Jordan Mckenzie", "Christopher Richter", "Caleb Roswell", "Seth Scott", "Ryan Seno", "Tiahna Spencer", "Bailin Stokes", "Elijah Verdaguer", "Connor Wentworth"};
+  vector <string> presentStudents {};
+  vector <string> absentStudents {};
+  string date;
+
+  cout<< "This program will help to keep attendance for the class of 2028 engineering clinic."<<endl<< "Please enter 'y' if the student is present and 'n' if the student is absent"<< endl;
+
+//get the date from the user to make the file accurate for the day
+ cout<< endl<< "please enter today's date Month-Day-Year" << endl;
+  cin>> date;
+
+//make the file for the day
+ofstream MyFile (date + ".txt");
+
+  for(int i = 0; i < studentNames.size(); i++){
+      char present = 'a';
+
+//ask if the student is present
+      cout<<"Is " << studentNames[i] << " present?" << endl;
+      cin >> present;
+
+//if the student is present mark them as such and tell the user
+      if (present == 'y' || present == 'Y') {
+          cout<< "marked present \n" << endl;
+
+  presentStudents.push_back(studentNames[i]); //put the student in the present names list
+
+
+        }
+//if the student is absent mark them absent and tell the user
+      else if (present == 'n' || present == 'N') {
+          cout<< "marked absent \n" << endl;
+
+  absentStudents.push_back(studentNames[i]); //put the student in the absent names list
+  }
+
+//don’t accept improper inputs
+      else {
+          cout<< "please try again" << endl;
+          i--; //decreases i by one to repeat the previous name
+      }
+  }
+
+//starts the list for present students
+  MyFile<< endl << "students present: " << endl;
+  for(int i = 0; i < presentStudents.size(); i++){
+
+      MyFile<< presentStudents[i] << endl; //list each name of the students that were previously marked present
+  }
+
+//Starts listing the students marked absent
+  MyFile<< endl << "students absent: " << endl;
+  for(int i = 0; i < absentStudents.size(); i++){ 
+
+  MyFile<< absentStudents[i] << endl; // list each name of the students that were previously marked absent
+
+  }
+  return 0;
+}
